@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <title>CareerSpring | Student Placement & Career Portal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="CareerSpring home">
+        <span class="brand-mark">CS</span><span><strong>CareerSpring</strong><small>PLACEMENT PORTAL</small></span>
+      </a>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="nav">
+        <button class="nav-link active" data-page="overview"><span>▦</span> Overview</button>
+        <button class="nav-link" data-page="opportunities"><span>⌕</span> Opportunities <b id="nav-job-count">6</b></button>
+        <button class="nav-link" data-page="applications"><span>↗</span> My applications</button>
+        <button class="nav-link" data-page="profile"><span>◎</span> Career profile</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card"><span class="help-icon">✦</span><strong>Ready for your next step?</strong><p>Build your profile and make every opportunity count.</p><button class="text-button" data-go="profile">Complete profile ↗</button></div>
+        <div class="user-mini"><div class="avatar" id="sidebar-avatar">ST</div><div><strong id="sidebar-name">Student User</strong><small id="sidebar-role">Student account</small></div><button id="logout-btn" class="icon-button" title="Log out" aria-label="Log out">↪</button></div>
+      </div>
+    </aside>
+    <main class="main-content">
+      <header class="topbar">
+        <div class="breadcrumb">Workspace <span>/</span> <strong id="page-crumb">Overview</strong></div>
+        <div class="top-actions"><span class="live-status"><i></i><span id="connection-label">Demo workspace</span></span><button class="icon-button notification" aria-label="Notifications">♧<em></em></button><div class="avatar avatar-small" id="top-avatar">ST</div></div>
+      </header>
+      <section class="page active" id="page-overview">
+        <div class="welcome-row"><div><div class="eyebrow">TUESDAY, YOUR FUTURE STARTS HERE</div><h1>Good morning, <span id="welcome-name">Student</span> <span class="wave">✦</span></h1><p class="subheading">Your career journey, all in one place. Let’s make progress today.</p></div><button class="primary-button" data-go="opportunities">Explore opportunities <span>↗</span></button></div>
+        <div class="stats-grid">
+          <article class="stat-card"><div class="stat-top"><span>Available roles</span><span class="stat-icon purple">⌕</span></div><div class="stat-number" id="stat-jobs">06</div><div class="stat-foot"><span class="positive">↗ Growing</span><span>Open opportunities</span></div></article>
+          <article class="stat-card"><div class="stat-top"><span>Applications sent</span><span class="stat-icon blue">↗</span></div><div class="stat-number" id="stat-applications">02</div><div class="stat-foot"><span class="positive">Keep going</span><span>Your career pipeline</span></div></article>
+          <article class="stat-card"><div class="stat-top"><span>Profile strength</span><span class="stat-icon orange">◎</span></div><div class="stat-number" id="stat-profile">72<span class="number-unit">%</span></div><div class="progress-track"><span id="profile-progress" style="width:72%"></span></div><div class="stat-foot"><span>Stand out to recruiters</span><button class="mini-link" data-go="profile">Improve ↗</button></div></article>
+          <article class="stat-card"><div class="stat-top"><span>Interviews</span><span class="stat-icon green">✧</span></div><div class="stat-number" id="stat-interviews">01</div><div class="stat-foot"><span class="positive">Stay prepared</span><span>Interview pipeline</span></div></article>
+        </div>
+        <div class="content-grid">
+          <section class="panel featured-panel"><div class="panel-heading"><div><div class="eyebrow">CURATED FOR YOU</div><h2>Featured opportunities</h2></div><button class="text-button" data-go="opportunities">View all ↗</button></div><div id="featured-jobs" class="job-list"></div></section>
+          <section class="panel progress-panel"><div class="panel-heading"><div><div class="eyebrow">YOUR NEXT MILESTONE</div><h2>Career checklist</h2></div><span class="tiny-pill">In progress</span></div><p class="muted">Small steps today make a stronger application tomorrow.</p><div class="checklist" id="career-checklist"></div><div class="tip-box"><span>✦</span><div><strong>Career tip</strong><p>Tailor your resume to the role. Highlight projects and measurable outcomes that match the job description.</p></div></div></section>
+        </div>
+        <section class="panel activity-panel"><div class="panel-heading"><div><div class="eyebrow">KEEP AN EYE ON IT</div><h2>Recent application activity</h2></div><button class="text-button" data-go="applications">Track applications ↗</button></div><div id="recent-applications"></div></section>
+      </section>
+      <section class="page" id="page-opportunities">
+        <div class="page-heading"><div><div class="eyebrow">FIND YOUR FIT</div><h1>Career opportunities</h1><p class="subheading">Explore internships and entry-level roles that move you forward.</p></div><span class="result-pill" id="opportunity-count">6 opportunities</span></div>
+        <div class="filter-bar"><label class="search-box"><span>⌕</span><input id="job-search" type="search" placeholder="Search role, company, or skill..."></label><select id="type-filter" aria-label="Filter by job type"><option value="all">All types</option><option>Full-time</option><option>Internship</option><option>Part-time</option></select><select id="location-filter" aria-label="Filter by location"><option value="all">All locations</option><option>Hyderabad</option><option>Bengaluru</option><option>Remote</option><option>Pune</option></select></div>
+        <div id="all-jobs" class="opportunity-grid"></div>
+      </section>
+      <section class="page" id="page-applications">
+        <div class="page-heading"><div><div class="eyebrow">YOUR CAREER PIPELINE</div><h1>My applications</h1><p class="subheading">Stay organised and see where every application stands.</p></div><button class="primary-button" data-go="opportunities">Find another role ↗</button></div>
+        <div class="application-summary" id="application-summary"></div><section class="panel table-panel"><div class="panel-heading"><div><h2>Application tracker</h2><p class="muted">Status updates help you plan your next step.</p></div><select id="application-filter" aria-label="Filter applications"><option value="all">All statuses</option><option>Applied</option><option>Under Review</option><option>Interview</option><option>Rejected</option><option>Offer</option></select></div><div id="applications-table"></div></section>
+      </section>
+      <section class="page" id="page-profile">
+        <div class="page-heading"><div><div class="eyebrow">YOUR PROFESSIONAL STORY</div><h1>Career profile</h1><p class="subheading">Give recruiters a clear picture of your strengths and ambitions.</p></div><span class="result-pill">Student profile</span></div>
+        <div class="profile-layout"><section class="panel profile-form-panel"><div class="panel-heading"><div><h2>Personal details</h2><p class="muted">Keep your information accurate and up to date.</p></div></div><form id="profile-form" class="form-grid"><label>Full name<input name="fullName" required maxlength="80" placeholder="Your full name"></label><label>Email address<input name="email" type="email"></label><label>Course / degree<input name="course" maxlength="100" placeholder="e.g. B.Tech Computer Science"></label><label>Graduation year<select name="graduationYear"><option value="">Select year</option><option>2027</option><option>2028</option><option>2029</option><option>2030</option><option>2031</option></select></label><label>Skills <span class="label-hint">Comma separated</span><input name="skills" maxlength="300" placeholder="JavaScript, SQL, Communication"></label><label>LinkedIn profile<input name="linkedin" type="url" placeholder="https://linkedin.com/in/yourname"></label><label class="full-width">Career summary<textarea name="summary" rows="4" maxlength="600" placeholder="A short introduction about your interests, skills and goals..."></textarea></label><div class="full-width form-actions"><span class="muted" id="profile-save-note">Changes are saved to your workspace.</span><button class="primary-button" type="submit">Save profile <span>✓</span></button></div></form></section><aside class="panel profile-preview"><div class="preview-banner"></div><div class="preview-avatar" id="preview-avatar">ST</div><h2 id="preview-name">Student User</h2><p class="muted" id="preview-course">Add your course to get started</p><div class="profile-score"><div><span>Profile strength</span><strong id="preview-score">72%</strong></div><div class="progress-track"><span id="preview-progress" style="width:72%"></span></div></div><div class="preview-section"><strong>Skills</strong><div id="preview-skills" class="skill-tags"><span class="skill-tag">Add your skills</span></div></div><div class="preview-section"><strong>About</strong><p id="preview-summary" class="muted">Your summary will appear here.</p></div></aside></div>
+      </section>
+      <footer class="footer"><span>© 2026 CareerSpring</span><span>Designed for your next opportunity <b>✦</b></span></footer>
+    </main>
+  </div>
+  <div class="toast-region" id="toast-region" aria-live="polite"></div>
+  <dialog id="apply-dialog" class="modal"><form method="dialog" id="apply-form"><button type="button" class="modal-close" id="close-apply" aria-label="Close">×</button><div class="eyebrow">TAKE THE NEXT STEP</div><h2>Apply for this role</h2><p class="muted" id="apply-job-label"></p><label>Short note to the recruiter<textarea id="cover-note" rows="4" maxlength="700" placeholder="Tell the recruiter why you're interested..."></textarea></label><div class="modal-actions"><button type="button" class="secondary-button" id="cancel-apply">Cancel</button><button class="primary-button" type="submit">Submit application ↗</button></div></form></dialog>
+  <script src="app.js"></script>
+</body>
+</html>
